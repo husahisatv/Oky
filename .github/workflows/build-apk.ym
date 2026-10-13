@@ -6,6 +6,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: aca2/app
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -17,4 +20,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: AndroidControlAgent-debug
-          path: app/build/outputs/apk/debug/*.apk
+          path: aca2/app/app/build/outputs/apk/debug/*.apk
